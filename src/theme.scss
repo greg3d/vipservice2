@@ -1,0 +1,36 @@
+@use "bulma/sass/utilities" with (
+  $family-primary: '"Roboto", "Arial", sans-serif',
+  // $grey-dark: $brown,
+  // $grey-light: $beige-light,
+  // $primary: $purple,
+  // $link: #F00,
+  $control-border-width: 0,
+  $control-radius: 0,
+  $control-radius-small: 0,
+  $control-height: 32px,
+);
+
+@use "bulma/sass/form" with (
+    $input-radius: 0,
+    $input-height: 32px,
+);
+@forward "bulma/sass/base";
+@use "bulma/sass/themes/light" as *;
+@use "bulma/sass/themes/setup" as *;
+// @forward "bulma/sass/components/modal";
+@forward "bulma/sass/elements/button";
+@forward "bulma/sass/elements/content";
+// @forward "bulma/sass/layout/footer";
+// @forward "bulma/sass/grid/columns";
+// @forward "bulma/sass/layout/container";
+@forward "bulma/sass/layout/section";
+@use "bulma/sass/components/navbar";
+
+// Import the Google Font
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    @include light-theme;
+    @include setup-theme;
+}
+

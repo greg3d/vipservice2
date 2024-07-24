@@ -1,0 +1,77 @@
+<?
+		$galleryID = "";
+		$galleryName = "slider_main_page_ru";
+		foreach( $arCollections as $item){ ($item["NAME"] == $galleryName) ? $galleryID = $item["ID"] : ""; }
+		$sliderFromGallery = CMedialibItem::GetList(array('arCollections' => array($galleryID)));
+		
+		if(isset($sliderFromGallery)){
+
+			echo '<ul id="slider1">';
+			foreach( $sliderFromGallery as $sliderFromGalleryItem ){
+				echo "<li>";
+					echo '<div class="categories-slider slider-submenu">';
+						echo '<div class="upper-box">';
+							$descriptionElementsParams = [];
+							if( isset($sliderFromGalleryItem["DESCRIPTION"]) ){
+								$descriptionElements = explode("\n", $sliderFromGalleryItem["DESCRIPTION"]);
+
+								for ($i = 0; $i < count($descriptionElements); $i++) {
+									$pivotElement = explode( "=", $descriptionElements[$i] );
+									array_push($descriptionElementsParams, $pivotElement);
+								}
+
+								foreach( $descriptionElementsParams as $descriptionElementsItem ){
+									if( $descriptionElementsItem[0] != "" ){
+										echo ( $descriptionElementsItem[0] == "title" ) ? '<h3>' . $descriptionElementsItem[1]. '</h3>' : "";
+										echo ( $descriptionElementsItem[0] == "subtitle" ) ? '<h4>' . $descriptionElementsItem[1]. '</h4>': "";
+									}
+								}
+							}
+							echo '<div class="uppercase submenu-trigger">';
+								foreach( $descriptionElementsParams as $descriptionElementsItem ){
+									echo ( $descriptionElementsItem[0] == "url" ) ? '<a href="' . $descriptionElementsItem[1] . '">Learn more<img src="/vipServiceSiteEn/images/arrow_more.png" class="arrow" alt=""></a>' : "";
+
+									if( $descriptionElementsItem[0] == "submenu" ){
+										$APPLICATION->IncludeComponent(
+											"bitrix:menu",
+											"middle_drop",
+											Array(
+												"ALLOW_MULTI_SELECT" => "N",
+												"CHILD_MENU_TYPE" => "submenu",
+												"DELAY" => "N",
+												"MAX_LEVEL" => "4",
+												"MENU_CACHE_GET_VARS" => array(""),
+												"MENU_CACHE_TIME" => "3600",
+												"MENU_CACHE_TYPE" => "A",
+												"MENU_CACHE_USE_GROUPS" => "N",
+												"ROOT_MENU_TYPE" => $descriptionElementsItem[1],
+												"USE_EXT" => "N"
+											)
+										);
+									}
+								}
+							echo '</div>'; 
+						echo '</div>'; 
+						echo '<div class="down-box">';
+							echo '<div class="down-box-image-container">';
+								foreach( $descriptionElementsParams as $descriptionElementsItem ){
+									if( $descriptionElementsItem[0] != "" ){
+										echo ( $descriptionElementsItem[0] == "url" ) ? '<a href="' . $descriptionElementsItem[1]. '">'  : "";
+									}
+								}
+								
+								echo '<img src="'. $sliderFromGalleryItem["PATH"] .'" />';
+								
+								foreach( $descriptionElementsParams as $descriptionElementsItem ){
+									if( $descriptionElementsItem[0] != "" ){
+										echo ( $descriptionElementsItem[0] == "url" ) ? '</a>'  : "";
+										echo ( $descriptionElementsItem[0] == "text" ) ? '<div class="hide-text">' . $descriptionElementsItem[1] . '</div>' : "";
+									}
+								}
+							echo '</div>';
+						echo '</div>';
+					echo '</div>'; 
+				echo '</li>'; 
+			}
+			echo '</ul>';
+		} ?>
