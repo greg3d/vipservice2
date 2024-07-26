@@ -124,11 +124,11 @@ $GLOBALS["arrFilterMain"] = array("PROPERTY_MAIN_VALUE" => 1);
 
         <?php $APPLICATION->IncludeComponent(
             "bitrix:advertising.banner",
-            "small_banner",
+            "small_banner_v2",
             array(
                 "CACHE_TIME" => "0",
                 "CACHE_TYPE" => "A",
-                "COMPONENT_TEMPLATE" => "small_banner",
+                "COMPONENT_TEMPLATE" => "small_banner_v2",
                 "COMPOSITE_FRAME_MODE" => "A",
                 "COMPOSITE_FRAME_TYPE" => "AUTO",
                 "NOINDEX" => "N",

@@ -474,13 +474,6 @@ h2.more-margin {
     .swiper-slide {
         width: 25%;
 
-        img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
         @include mobile {
             width: 100%
         }
@@ -623,16 +616,15 @@ h2.more-margin {
 
     @include desktop {
         flex-direction: row;
-        .content {
+        .center-col, .content {
             width: 67%;
             font-size: 16px;
         }
 
-        .sidemenu {
+        .right-col, .sidemenu {
             flex-grow: 1;
             margin-left: 80px;
             li {
-                cursor: pointer;
                 padding: 8px 0;
                 color: #315470;
                 border-bottom: 1px solid #A8A8A8;
@@ -643,6 +635,23 @@ h2.more-margin {
                 color: #62B5E5;
                 font-weight: bold;
             }
+
+            li.dropdown {
+                cursor: pointer;
+                ul {
+                    display: none;
+                    margin-top: 0.25rem;
+                    li {
+                        font-size: 14px;
+                        padding: 4px 0;
+                        margin-left: 1.25rem;
+                        line-height: 20px;
+                        border-bottom: none;
+                    }
+                }
+            }
+
+
 
             li.dropdown:after {
                 content: " ";
@@ -658,15 +667,33 @@ h2.more-margin {
                 transform: translateY(50%);
             }
 
+            li.dropdown.opened {
+                ul {
+                    display: block;
+                }
+            }
+            li.dropdown.opened:after {
+                transform: translateY(50%) rotate(180deg);
+            }
+
+
+
 
         }
     }
 }
 
-.content {
+.center-col, .content {
 
     p:not(:last-child) {
         margin-bottom: 2.25rem;
+    }
+
+    h3 {
+        color: #315470;
+        @include desktop {
+            margin-bottom: 25px;
+        }
     }
 
     h4 {
@@ -851,3 +878,23 @@ nav {
 .our-partners img {
     height: 32px;
 }
+
+
+.main-banner-link a {
+    position: relative;
+    display: block;
+    /* width: 100%; */
+    padding-bottom: 79%;
+    overflow: hidden;
+}
+
+.main-carousel .main-banner-link img {
+    position: absolute;
+    display: block;
+    top: 0%;
+    width: 100%;
+    /* height: 100%; */
+    left: 0;
+    object-fit: cover;
+}
+

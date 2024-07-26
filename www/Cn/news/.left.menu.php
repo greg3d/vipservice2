@@ -1,0 +1,32 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"关于我们", 
+		"../about/index.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"新闻", 
+		"../news/index.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"我们的品牌", 
+		"../brand/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"规范性文件", 
+		"../about/safety.php", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

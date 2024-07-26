@@ -5,13 +5,16 @@
 IncludeTemplateLangFile(__FILE__); ?>
 
 <?php $arCurDir = explode("/", $APPLICATION->GetCurDir()); ?>
+<?php if (!$locationMainpage): ?>
+    </div>
+<?php endif; ?>
 
 </section>
 
 <div id="helpdeskcontainer" class="section blue">
     <h2><?= $helpdeskName[LANGUAGE_ID]["helpdeskName"] ?></h2>
     <div class="spravka">
-    <?= $helpdeskContainer ?>
+        <?= $helpdeskContainer ?>
     </div>
 </div>
 <div style="clear:both"></div>

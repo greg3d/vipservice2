@@ -40,7 +40,7 @@ if (count($arResult["ITEMS"]) > 0):
 
                 <div class="link">
                     <?php if (LANGUAGE_ID === "ru") { ?>
-                        <a href="<?php echo $arItem["DETAIL_PAGE_URL"] ?>" class="more-link">Далее</a>
+                        <a href="<?php echo $arItem["DETAIL_PAGE_URL"] ?>" class="more-link">Далее...</a>
                     <?php } ?>
                     <?php if (LANGUAGE_ID === "en") { ?>
                         <a href="<?php echo $arItem["DETAIL_PAGE_URL"] ?>" class="more-link">Read more...</a>
@@ -66,24 +66,24 @@ if (count($arResult["ITEMS"]) > 0):
 
     <a href="<?= SITE_DIR ?>news/" class="allnews">
         <?php if (LANGUAGE_ID === "ru") { ?>
-            Все новости...
+            Все новости
         <?php } ?>
         <?php if (LANGUAGE_ID === "en") { ?>
-            View all news...
+            View all news
         <?php } ?>
         <?php if (LANGUAGE_ID === "de") { ?>
-            Alle Neuigkeiten anzeigen...
+            Alle Neuigkeiten anzeigen
         <?php } ?>
         <?php if (LANGUAGE_ID === "cn") { ?>
-            所有新闻...
+            所有新闻
         <?php } ?>
         <?php if (LANGUAGE_ID === "kz") { ?>
-            Все новости...
+            Барлық жаңалықтар
         <?php } ?>
         <?php if (LANGUAGE_ID === "tr") { ?>
-            All news...
+            Tüm haberler
         <?php } ?>
-        <svg width="8" height="17" viewBox="0 0 8 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="more-arrow-v2" width="8" height="17" viewBox="0 0 8 17" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0.999999 15.7341L6.33061 9.515C6.7158 9.06562 6.7158 8.40249 6.33061 7.95311L0.999999 1.73406"
                   stroke="#CE0058" stroke-width="1.5" stroke-linecap="round"/>
         </svg>

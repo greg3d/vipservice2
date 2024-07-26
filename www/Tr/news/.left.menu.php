@@ -1,0 +1,32 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Hakkımızda", 
+		"../about/index.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Haberler", 
+		"../news/index.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Markamız", 
+		"../brand/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Düzenleme belgeleri", 
+		"../about/safety.php", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

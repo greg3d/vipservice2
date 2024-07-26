@@ -1,9 +1,5 @@
-console.log("fdf");
-
 const fs = require('fs');
 const path = require('path');
-
-
 
 const buildDir = path.resolve(__dirname, 'www/bitrix/templates/vipservice2/assets');
 const phpFilePath = path.resolve(__dirname, 'www/bitrix/templates/vipservice2/header.php');
@@ -15,24 +11,25 @@ const updatePhpFile = () => {
     const files = fs.readdirSync(buildDir);
 
 
+
     let updatedContent = phpFileContent;
 
     files.forEach(file => {
         const ext = path.extname(file);
         const baseName = path.basename(file, ext);
 
-        console.log(baseName);
 
         if (ext === '.js') {
             // Update the JS file reference
-            updatedContent = updatedContent.replace(/main\.[a-z0-9]+\.js/, baseName + '.js');
+            updatedContent = updatedContent.replace(/main\.[A-Za-z0-9]+\.js/, baseName + '.js');
         } else if (ext === '.css') {
             // Update the CSS file reference
-            updatedContent = updatedContent.replace(/main\.[a-z0-9]+\.css/, baseName + '.css');
+            updatedContent = updatedContent.replace(/main\.[A-Za-z0-9]+\.css/, baseName + '.css');
         }
     });
 
-    fs.writeFileSync(phpFilePath2, updatedContent, 'utf8');
+    fs.writeFileSync(phpFilePath, updatedContent, 'utf8');
 }
 
 updatePhpFile();
+console.log('done');

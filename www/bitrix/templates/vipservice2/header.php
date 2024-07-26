@@ -9,60 +9,60 @@ if ($loc !== '/' && $loc !== '/En/' && $loc !== '/De/' && $loc !== '/Cn/' && $lo
 endif;
 
 ?>
-    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="<?= LANGUAGE_ID ?>">
-    <head>
-        <meta name="yandex-verification" content="64779707d1c766c6"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta http-equiv="Content-Type" content="text/html; charset=<?= LANG_CHARSET; ?>"/>
-        <link rel="shortcut icon" type="image/x-icon" href="<?= SITE_TEMPLATE_PATH ?>/favicon.ico"/>
-        <!--ShowHead-->
-        <?php $APPLICATION->ShowHead(); ?>
-        <!--End of ShowHead-->
+<head>
+    <meta name="yandex-verification" content="64779707d1c766c6"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=<?= LANG_CHARSET; ?>"/>
+    <link rel="shortcut icon" type="image/x-icon" href="<?= SITE_TEMPLATE_PATH ?>/favicon.ico"/>
+    <!--ShowHead-->
+    <?php $APPLICATION->ShowHead(); ?>
+    <!--End of ShowHead-->
 
-        <?php $APPLICATION->SetTitle("Vipservice _ "); ?>
-        <title><?php echo $APPLICATION->ShowTitle() ?? "Vipservice" ?></title>
+    <?php $APPLICATION->SetTitle("Vipservice _ "); ?>
+    <title><?php echo $APPLICATION->ShowTitle() ?? "Vipservice" ?></title>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta content="NO-CACHE" http-equiv="CACHE-CONTROL"/>
-        <meta content="NO-CACHE" http-equiv="PRAGMA"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="NO-CACHE" http-equiv="CACHE-CONTROL"/>
+    <meta content="NO-CACHE" http-equiv="PRAGMA"/>
 
-        <!-- Put this script tag to the <head> of your page -->
-        <script type="text/javascript" src="https://vk.com/js/api/share.js?95" charset="windows-1251"></script>
+    <!-- Put this script tag to the <head> of your page -->
+    <script type="text/javascript" src="https://vk.com/js/api/share.js?95" charset="windows-1251"></script>
 
-        <script type="module" crossorigin src="<?=SITE_TEMPLATE_PATH?>/assets/main.ddd22.js"></script>
-        <link rel="stylesheet" crossorigin href="<?=SITE_TEMPLATE_PATH?>/assets/main.xxdsfsfx2.css" />
+    <script type="module" crossorigin src="<?= SITE_TEMPLATE_PATH ?>/assets/main.C1adayj-.js"></script>
+    <link rel="stylesheet" crossorigin href="<?= SITE_TEMPLATE_PATH ?>/assets/main.SiXjOorG.css"/>
 
-        <?php // ??? - nothing here after render
-        if (CModule::IncludeModule("iblock")) {
-            $pieces = explode("/", $_SERVER['REQUEST_URI']);
-            $arIBlockElement = "";
+    <?php // ??? - nothing here after render
+    if (CModule::IncludeModule("iblock")) {
+        $pieces = explode("/", $_SERVER['REQUEST_URI']);
+        $arIBlockElement = "";
 
-            if (isset($pieces[3]) && $pieces[3] != "") {
-                $arIBlockElement = GetIBlockElement($pieces[3], "");
-            } else if (isset($pieces[2]) && $pieces[2] != "") {
-                $arIBlockElement = GetIBlockElement($pieces[2], "");
-            }
-            if (isset($arIBlockElement) && $arIBlockElement != "") {
-                $arFile = CFile::GetFileArray($arIBlockElement["PREVIEW_PICTURE"])['SRC']; ?>
-
-                <meta property="og:url" content="<?php echo $arIBlockElement['DETAIL_PAGE_URL']; ?>"/>
-                <meta property="og:type" content="website"/>
-                <meta property="og:title" content="<?php echo $arIBlockElement['NAME']; ?>"/>
-                <meta property="og:description" content="<?php echo $arIBlockElement['PREVIEW_TEXT']; ?>"/>
-                <meta name="description" content="<?php echo $arIBlockElement['PREVIEW_TEXT']; ?>"/>
-                <meta property="og:image" content="vipservice.ru<?php echo $arFile; ?>"/>
-                <?php
-            }
+        if (isset($pieces[3]) && $pieces[3] != "") {
+            $arIBlockElement = GetIBlockElement($pieces[3], "");
+        } else if (isset($pieces[2]) && $pieces[2] != "") {
+            $arIBlockElement = GetIBlockElement($pieces[2], "");
         }
+        if (isset($arIBlockElement) && $arIBlockElement != "") {
+            $arFile = CFile::GetFileArray($arIBlockElement["PREVIEW_PICTURE"])['SRC']; ?>
 
-        CModule::IncludeModule("fileman");
-        CMedialib::Init();
-        $arCollections = CMedialibCollection::GetList(array('arOrder' => array('NAME' => 'ASC'), 'arFilter' => array('ACTIVE' => 'Y')));
+            <meta property="og:url" content="<?php echo $arIBlockElement['DETAIL_PAGE_URL']; ?>"/>
+            <meta property="og:type" content="website"/>
+            <meta property="og:title" content="<?php echo $arIBlockElement['NAME']; ?>"/>
+            <meta property="og:description" content="<?php echo $arIBlockElement['PREVIEW_TEXT']; ?>"/>
+            <meta name="description" content="<?php echo $arIBlockElement['PREVIEW_TEXT']; ?>"/>
+            <meta property="og:image" content="vipservice.ru<?php echo $arFile; ?>"/>
+            <?php
+        }
+    }
 
-        ?>
-        <?php /*
+    CModule::IncludeModule("fileman");
+    CMedialib::Init();
+    $arCollections = CMedialibCollection::GetList(array('arOrder' => array('NAME' => 'ASC'), 'arFilter' => array('ACTIVE' => 'Y')));
+
+    ?>
+    <?php /*
         <!-- Yandex.Metrika counter -->
         <script type="text/javascript">
             (function (d, w, c) {
@@ -100,35 +100,41 @@ endif;
         </noscript>
         <!-- /Yandex.Metrika counter --> */ ?>
 
-        <style>
-            .is-hidden {
-                display: none;
-            }
+    <style>
+        .is-hidden {
+            display: none;
+        }
 
-            #form-portbilet {
-                position: absolute;
-                width: 1px;
-                height: 1px;
-                opacity: 0;
-                left: 0;
-                top: 0;
-                overflow: hidden;
-            }
+        #form-portbilet {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+        }
 
-        </style>
-    </head>
+        .more-arrow-v2 {
+            position: relative;
+            top: 3px;
+            left: 10px;
+        }
+
+    </style>
+</head>
 <body>
-    <!-- Форма (скрытая) для portbilet -->
-    <!-- TODO: check in new scripts -->
-    <div id="form-portbilet">
-        <script
-            id="pb-ext-login-form"
-            data-main="https://portbilet.ru/app/external-login/assets/js/app/Entry.js"
-            src="https://portbilet.ru/app/external-login/assets/js/lib/require/require.js">
-        </script>
-    </div>
+<!-- Форма (скрытая) для portbilet -->
+<!-- TODO: check in new scripts -->
+<div id="form-portbilet">
+    <script
+        id="pb-ext-login-form"
+        data-main="https://portbilet.ru/app/external-login/assets/js/app/Entry.js"
+        src="https://portbilet.ru/app/external-login/assets/js/lib/require/require.js">
+    </script>
+</div>
 
-    <div id="panel"><?php $APPLICATION->ShowPanel(); ?></div>
+<div id="panel"><?php $APPLICATION->ShowPanel(); ?></div>
 
 <?php
 
@@ -512,7 +518,9 @@ $notNews = (substr_count($_SERVER['REQUEST_URI'], 'news/') != 1) &&
             <div class="languages">
                 <div class="arrow">
                     <svg width="12" height="6" viewBox="0 0 12 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.999817 0.699999L5.23553 4.33062C5.68492 4.7158 6.34805 4.7158 6.79743 4.33061L11.0331 0.7" stroke="#121212" stroke-width="1.1" stroke-linecap="round"></path>
+                        <path
+                            d="M0.999817 0.699999L5.23553 4.33062C5.68492 4.7158 6.34805 4.7158 6.79743 4.33061L11.0331 0.7"
+                            stroke="#121212" stroke-width="1.1" stroke-linecap="round"></path>
                     </svg>
                 </div>
                 <?= $languagesHtml ?>
@@ -596,5 +604,7 @@ if (!$locationMainpage) {
     );
 } ?>
 
-    <section class="section">
-
+<section class="section">
+    <?php if (!$locationMainpage): ?>
+    <div class="article">
+        <?php endif; ?>

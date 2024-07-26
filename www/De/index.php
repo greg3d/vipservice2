@@ -36,12 +36,6 @@ $GLOBALS["arrFilterMain"] = array("PROPERTY_MAIN_VALUE" => 1);
 
                     echo '<figure><img src="' . $sliderFromGalleryItem["PATH"] . '" alt="' . $current['title'] . " " . $current['subtitle'] . '" /></figure>';
                     echo '<h3><a href="' . $current['url'] . '">' . $current['title'] . " " . $current['subtitle'] . '</a></h3>';
-                    // $current['url']
-                    // $current['title']
-                    // $current['subtitle']
-                    //
-                    // $sliderFromGalleryItem["PATH"]
-                    // $current['text']
                 }
                 echo '</div>';
             }
@@ -51,7 +45,7 @@ $GLOBALS["arrFilterMain"] = array("PROPERTY_MAIN_VALUE" => 1);
 
     <!-- NEWS -->
     <section class="section">
-        <h2>News</h2>
+        <h2>Nachrichten</h2>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"main_news_v2", 
@@ -131,11 +125,11 @@ $GLOBALS["arrFilterMain"] = array("PROPERTY_MAIN_VALUE" => 1);
 
         <?php $APPLICATION->IncludeComponent(
             "bitrix:advertising.banner",
-            "small_banner",
+            "small_banner_v2",
             array(
                 "CACHE_TIME" => "0",
                 "CACHE_TYPE" => "A",
-                "COMPONENT_TEMPLATE" => "small_banner",
+                "COMPONENT_TEMPLATE" => "small_banner_v2",
                 "COMPOSITE_FRAME_MODE" => "A",
                 "COMPOSITE_FRAME_TYPE" => "AUTO",
                 "NOINDEX" => "N",

@@ -45,6 +45,14 @@ document.addEventListener("DOMContentLoaded", () => {
         //languages.addEventListener('mouseleave', () => languages.classList.remove('opened'));
     }
 
+    let dropdowns = document.querySelector<HTMLElement>('.sidemenu .dropdown');
+    if (dropdowns !== null) {
+        const hammer2 = new Hammer(dropdowns);
+        hammer2.on('tap', () => dropdowns.classList.toggle('opened'));
+        //languages.addEventListener('mouseenter', () => languages.classList.add('opened'));
+        //languages.addEventListener('mouseleave', () => languages.classList.remove('opened'));
+    }
+
     const $spravkaItems = document.querySelectorAll<HTMLElement>('.spravka-item');
 
     $spravkaItems.forEach(item=>{
