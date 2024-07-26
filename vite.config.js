@@ -1,15 +1,20 @@
 // vite.config.js
 import {resolve} from "path"
 import viteImagemin from "vite-plugin-imagemin"
-import {defineConfig} from "vite";
+
 export default () => {
     return {
         build: {
-            outDir: './bitrix/templates/vipservice2',
+            outDir: './www/bitrix/templates/vipservice2',
             emptyOutDir: false,
             rollupOptions: {
+                output: {
+                    assetFileNames: 'assets/[name].[ext]',
+                    chunkFileNames: 'assets/[name].js',
+                    entryFileNames: 'assets/[name].js'
+                },
                 input: {
-                    file1: resolve("./", "index.html"),
+                    main: resolve("./", "index.html"),
                     //file2: resolve("./", "news.html"),
                     //file3: resolve("./", "contacts.html")
                 },

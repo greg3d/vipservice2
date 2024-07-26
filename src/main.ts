@@ -1,5 +1,7 @@
 import "./theme.scss"
 import "./styles.scss"
+import Hammer from "hammerjs";
+
 // import Swiper from "swiper"
 
 /*
@@ -32,6 +34,25 @@ document.addEventListener("DOMContentLoaded", () => {
             $target!.classList.toggle("is-active")
 
         })
+    })
+
+    let languages = document.querySelector<HTMLElement>('.languages');
+
+    if (languages !== null) {
+        const hammer = new Hammer(languages);
+        hammer.on('tap', () => languages.classList.toggle('opened'));
+        //languages.addEventListener('mouseenter', () => languages.classList.add('opened'));
+        //languages.addEventListener('mouseleave', () => languages.classList.remove('opened'));
+    }
+
+    const $spravkaItems = document.querySelectorAll<HTMLElement>('.spravka-item');
+
+    $spravkaItems.forEach(item=>{
+        item.addEventListener("click", ()=>{
+            if (item.dataset.link) {
+                document.location.href = item.dataset.link;
+            }
+        });
     })
 
     // carousels()
